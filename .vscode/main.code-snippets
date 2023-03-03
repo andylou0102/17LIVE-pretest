@@ -1,0 +1,15 @@
+{
+	"Vue File Template (vue 3, ts, script setup)": {
+		"scope": "vue",
+		"prefix": "newcomponent",
+		"body": [
+			"<template>",
+			"</template>",
+			"",
+			"<script setup lang=\"ts\">",
+			"</script>",
+			"",
+		],
+		"description": "Create new vue file template"
+	},
+}
