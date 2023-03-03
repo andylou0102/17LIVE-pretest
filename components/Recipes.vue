@@ -30,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+
 function solution (recipes: string[][]) {
   const res: Record<string, string[]> = {}
   recipes.forEach((arr) => {
@@ -53,6 +54,7 @@ function solution (recipes: string[][]) {
     .sort((a, b) => a.localeCompare(b))
     .map((recipe) => [recipe, ...res[recipe]])
 }
+
 const recipes_1 = [
   ["Salad", "Tomato", "Cucumber", "Salad", "Sauce"],
   ["Pizza", "Tomato", "Sausage", "Sauce", "Dough"],

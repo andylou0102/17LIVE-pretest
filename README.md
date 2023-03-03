@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Pretest (Nuxt 3)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Pretest solution project.
 
 ## Setup
 
@@ -25,18 +25,43 @@ Start the development server on http://localhost:3000
 npm run dev
 ```
 
-## Production
+## Screenshot
+*****
+### Solution 1
+  
+<img src="./assets/solution1.png" width="100%">  
+  
+### Solution 2
 
-Build the application for production:
+<img src="./assets/solution2.png" width="100%">  
+  
 
-```bash
-npm run build
+```ts
+function solution (recipes: string[][]) {
+  const res: Record<string, string[]> = {}
+  recipes.forEach((arr) => {
+    let dish: string | null = null
+    arr.forEach((recipe, index) => {
+      if (index === 0) {
+        dish = recipe
+      } else if (dish != null) {
+        if (res[recipe] == null) {
+          res[recipe] = [dish]
+        } else {
+          res[recipe].push(dish)
+        }
+      }
+    })
+  })
+  for (let key in res) {
+    res[key].sort((a, b) => a.localeCompare(b))
+  }
+  return Object.keys(res)
+    .sort((a, b) => a.localeCompare(b))
+    .map((recipe) => [recipe, ...res[recipe]])
+}
 ```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+  
+### Solution 3
+  
+<img src="./assets/solution3.png" width="100%">  
